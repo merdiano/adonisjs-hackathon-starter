@@ -11,7 +11,12 @@ class User extends Model {
   static get primaryKey () {
     return 'id'
   }
-
+  static get traits () {
+    return [
+      '@provider:Adonis/Acl/HasRole',
+      '@provider:Adonis/Acl/HasPermission'
+    ]
+  }
   /**
    * The attributes that should be hidden for arrays.
    *
